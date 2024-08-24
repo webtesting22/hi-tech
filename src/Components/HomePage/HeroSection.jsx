@@ -8,7 +8,7 @@ import Residential from "../../images/Residential.png";
 import Commercial from "../../images/Commercial.png";
 import Industrial from "../../images/Industrial.png";
 import Institutional from "../../images/Institutional.png";
-import Arrow from "../../images/Arrow.png";
+import Arrow from "../../images/arrow.png";
 import PeopleGroup from "../../images/People.png";
 import Process from "../../images/Refresh.png"
 import Standards from "../../images/Standards.png";
