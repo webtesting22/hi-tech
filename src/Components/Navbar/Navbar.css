@@ -1,0 +1,23 @@
+.navigationbar{
+    background-color: rgba(90, 106, 119, 0.73);
+    height: 40px;
+    border-radius: 50px;
+    width: 570px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #98C3E6 1px solid;
+    margin:0 auto ;
+    position: sticky;
+}
+.navigationbar a {
+    /* padding: 30px; */
+    margin: 20px;
+    font-size: 18px;
+}
+#navbar{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

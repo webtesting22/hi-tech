@@ -1,0 +1,28 @@
+.cardContainer{
+    border: 1px solid white;
+    padding: 10px 20px;
+    width: 364px;
+    border-radius: 25px;
+    height: 520px;
+    margin-left: 70px;
+}
+.projectCardImage{
+    width: 366px;
+    padding: 10px 0;
+}
+.projectHeading{
+    text-align: center;
+    color:#1395FF;
+    padding: 10px 0;
+}
+.projectList p{
+    padding:5px;
+}
+.description{
+    opacity: 0.7;
+    display: inline-block;
+}
+.label{
+    opacity: 1;
+    display: inline-block;
+}

@@ -1,0 +1,39 @@
+.footer-section{
+    border-top:1px solid #6E7178;
+    height: 300px;
+    color: #F6FBFF;
+}
+.verticalDivider{
+    margin-top: 50px;
+    height: 200px;
+    width: -10px;
+    background-color: #858585;
+}
+.footer-column img {
+    top: 30px;
+    left: 17px;
+    height: 57px;
+    position: relative;
+}
+.footer-column h1 {
+    padding-top: 40px;
+}
+.footer-column p{
+    padding-top: 20px;
+}
+.links-container{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.horizontal-divider{
+    background-color: #858585;
+    height: 1px;
+    margin: 10px auto;
+    width: 1304px;
+}
+.footer-link{
+    text-align: center;
+}
