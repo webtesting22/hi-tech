@@ -1,22 +1,13 @@
-import React from "react";
+import React from 'react';
 import ProjectPage from "../CommonProject/ProjectPage";
 import CardComponent from "../../CardComponent/CardComponent";
+import { Navigation } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 import { Col } from "antd";
 const commerciallist = [
-
-  // {
-  //   src: "",
-  //   title:"Sharanam Metrolink",
-  //   content: "...",
-  //   client: "Sharanam Metrolink LLP",
-  //   location: "Khokhara, Ahmedabad",
-  //   projectSize: "4,91,032 Sq. ft.",
-  //   projectDes: "2 Floors, 12 Meters",
-  //   projectYear: "2020-Current",
-  //   architect: "99 Studio",
-  //   consultant: "Shreeji Consultant",
-  //   scope: "Civil Construction with finishing work of Commercial Building of B+G+4 storey (7 Blocks) and B+G+5 storey (2 Blocks).",
-  // },
   {
     src: "images/Projects/commercial/ongoing/1-1.jpeg",
     title: "SHARANAM SQUARE",
@@ -43,7 +34,19 @@ const commerciallist = [
     consultant: "J W Consultants LLP",
     scope: "Civil works, Masonry & Plaster, and Waterproofing.",
   },
-
+  {
+    src: "images/Projects/commercial/ongoing/1-1.jpg",
+    title: "THE PROFIT",
+    content: "...",
+    client: "The Building Company",
+    location: "Adajan, Surat",
+    projectSize: "159,174 Sq. ft.",
+    projectDes: "10 Floors, 45 Meters",
+    projectYear: "2022",
+    architect: "Tathastu",
+    consultant: "SNV Engineers",
+    scope: " RCC Framework, Masonry,Plaster.",
+  },
   {
     src: "images/Projects/commercial/ongoing/1-4.png",
     title: "FLEXONE",
@@ -73,19 +76,7 @@ const commerciallist = [
   },
 ];
 const commercialcompleted = [
-  {
-    src: "images/Projects/commercial/ongoing/1-1.jpg",
-    title: "THE PROFIT",
-    content: "...",
-    client: "The Building Company",
-    location: "Adajan, Surat",
-    projectSize: "159,174 Sq. ft.",
-    projectDes: "10 Floors, 45 Meters",
-    projectYear: "2022",
-    architect: "Tathastu",
-    consultant: "SNV Engineers",
-    scope: " RCC Framework, Masonry,Plaster.",
-  },
+
   // {
   //   src: "images/Projects/commercial/ongoing/2.png",
   //   title: "TORRENT POWER “B” STATION",
@@ -311,21 +302,6 @@ const commercialcompleted = [
     consultant: "N.K. Shah Consulting Engineers LLP",
     scope: "RCC Framework, Masonry ,Plaster,Finishing Work.",
   },
-  // {
-  //   src: "images/Projects/commercial/completed/11.png",
-  //   title: "SUMEL Business Park V9",
-  //   content:
-  //     "Well designed by H N Safal, Sumel 8 shelters 11 high rise towers with 1983 units that are highly impressive.",
-  //   segment: "Commercial",
-  //   client: "H N Safal",
-  //   location: "Asarva, Ahmedabad",
-  //   projectSize: "16,00,000 Sqft. 11 Commercial buildings (B+G+5 Floors)",
-  //   projectYear: "2014",
-  //   architect: "ADS Architects Pvt Ltd",
-  //   consultant: "N.K. Shah Consulting Engineers LLP",
-  //   scope:
-  //     "Civil Construction work of RCC Frame, Block Masonry Plaster work & Finishing Works of Commercial Building of B+G+4 Storey (9 Blocks).",
-  // },
   {
     src: "images/Projects/commercial/completed/12.jpg",
     title: "WESTGATE",
@@ -380,28 +356,39 @@ const content = {
 const Commercial = () => {
   return (
     <>
-      
+
       <ProjectPage title={content.title} description={content.description} />
-      
+
       <button className="projectButton">ONGOING PROJECTS</button>
-      {commerciallist.map((item, index) => {
-        return (
-          <CardComponent key={index} image={item.src} title={item.title} client={item.client} location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
-            projectYear={item.projectYear} architect={item.architect} consultant={item.consultant} scope={item.scope}
-          />)
-      })}
-      
+      <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={3}>
+        
+
+          {commerciallist.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <CardComponent image={item.src} title={item.title} client={item.client} location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
+                  projectYear={item.projectYear} architect={item.architect} consultant={item.consultant} scope={item.scope}
+                />
+              </SwiperSlide>)
+          })}
+        
+      </Swiper>
       <button className="projectButton">COMPLETED PROJECTS</button>
-      
-      <Col lg={6}>
-      {commercialcompleted.map((item, index) => {
-        return (
-          <CardComponent key={index} image={item.src} title={item.title} client={item.client}location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
-            projectYear={item.projectYear} architect={item.architect} consultant={item.consultant} scope={item.scope}
-          />)
-      })}
-      </Col>
-      
+      <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={3}>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        {commercialcompleted.map((item, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <CardComponent key={index} image={item.src} title={item.title} client={item.client} location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
+                projectYear={item.projectYear} architect={item.architect} consultant={item.consultant} scope={item.scope}
+              />
+            </SwiperSlide>)
+
+        })}
+      </div>
+      </Swiper>
+
+
     </>
   )
 }

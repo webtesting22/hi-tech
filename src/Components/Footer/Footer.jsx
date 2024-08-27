@@ -1,5 +1,5 @@
 import React from "react";
-import HitechLogo from "../../images/HitechLogo.png"
+import HitechLogo from "/images/HitechLogo.png"
 import "./Footer.css";
 import { Col, Row } from "antd";
 import { Link } from "react-router-dom";
@@ -25,10 +25,11 @@ const Footer = () => {
                                 <a>Contact Us</a>
                             </div>
                             <div className="links-container" >
-                                <a>Residential</a>
-                                <a>Commercial</a>
-                                <a>Industrial</a>
-                                <a>Institutional & Corporate</a>
+                            <Link to="/Residential">Residential</Link>
+                            <Link to="/Commercial">Commercial</Link>
+                            <Link to="/Industrial">Industrial</Link>
+                            <Link to="/Institutional">Institutional & Corporate</Link>
+
                             </div>
                         </div>
                     </Col>

@@ -8,12 +8,7 @@ const ProjectPage = (props) => {
                 <h1 className="ProjectTitle">{props.title}</h1>
                 <p className="ProjectDescription">{props.description}</p>
             </div>
-            <div>
-                
-                
-                <CardComponent />
-                
-            </div>
+           
         </>
     )
 }

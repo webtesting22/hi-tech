@@ -1,5 +1,5 @@
 import React from "react";
-import HitechLogo from "../../images/HitechLogo.png";
+import HitechLogo from "/images/HitechLogo.png";
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
 import "./Navbar.css";

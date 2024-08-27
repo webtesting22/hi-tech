@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import AboutUs from "../AboutUs/AboutUs";
-import People from "../../images/group.png"
-import Medal from "../../images/achievementMedal.png";
-import workForce from "../../images/workForce.png";
+import People from "/images/group.png"
+import Medal from "/images/achievementMedal.png";
+import workForce from "/images/workForce.png";
 import { Row, Col } from "antd";
-import Residential from "../../images/Residential.png";
-import Commercial from "../../images/Commercial.png";
-import Industrial from "../../images/Industrial.png";
-import Institutional from "../../images/Institutional.png";
-import Arrow from "../../images/arrow.png";
-import PeopleGroup from "../../images/People.png";
-import Process from "../../images/Refresh.png"
-import Standards from "../../images/Standards.png";
-import Technology from "../../images/Technology.png";
-import partnerBackground from "../../images/partnerBackground.png"
+import Residential from "/images/Residential.png";
+import Commercial from "/images/Commercial.png";
+import Industrial from "/images/Industrial.png";
+import Institutional from "/images/Institutional.png";
+import Arrow from "/images/arrow.png";
+import PeopleGroup from "/images/People.png";
+import Process from "/images/Refresh.png"
+import Standards from "/images/Standards.png";
+import Technology from "/images/Technology.png";
+import partnerBackground from "/images/partnerBackground.png"
 import "./HeroSection.css";
-import ImageMap from "../../images/mapImage.png";
+import ImageMap from "/images/mapImage.png";
 import CardComponent from "../CardComponent/CardComponent";
 
 const HeroSection = () => {

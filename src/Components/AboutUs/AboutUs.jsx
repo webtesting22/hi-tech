@@ -1,8 +1,8 @@
 import React from "react";
 import "./AboutUs.css";
-import AboutImage from "../../images/Image.png";
-import Card from "../../images/card.png";
-import card2 from "../../images/card2.png";
+import AboutImage from "/images/Image.png";
+import Card from "/images/card.png";
+import card2 from "/images/card2.png";
 
 const AboutUs = () => {
     return (
