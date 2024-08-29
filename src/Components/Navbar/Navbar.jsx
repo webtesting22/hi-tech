@@ -44,25 +44,25 @@ const items2 = [
     {
         key: '1',
         label: (
-            <a target="_blank" rel="noopener noreferrer" href="#">
+            <Link to="/PlantAndMachinery" rel="noopener noreferrer">
                 Plant And Machinery
-            </a>
+            </Link>
         ),
     },
     {
         key: '2',
         label: (
-            <a target="_blank" rel="noopener noreferrer" href="#">
-                Form work
-            </a>
+            <Link to="/FormWork" rel="noopener noreferrer">
+            Form work
+            </Link>
         ),
     },
     {
         key: '3',
         label: (
-            <a target="_blank" rel="noopener noreferrer" href="#">
+            <Link to="/Technology" rel="noopener noreferrer">
                 Technology
-            </a>
+            </Link>
         ),
     },
 ];
@@ -145,7 +145,7 @@ const DropdownMenu = ({ items, text }) => (
         <a onClick={(e) => e.preventDefault()}>
             <Space>
                 {text}
-                <DownOutlined />
+                <DownOutlined style={{ fontSize: "1.2rem" }} />
             </Space>
         </a>
     </Dropdown>
@@ -154,7 +154,7 @@ const DropdownMenu = ({ items, text }) => (
 const Navbar = () => {
     return (
         <>
-            <img src={HitechLogo} alt="HitechLogo" style={{ margin: "20px" }} />
+           <Link to="/"> <img src={HitechLogo} alt="HitechLogo" style={{ margin: "20px" }} /></Link>
             <section className="navBar" id="navbar">
                 <nav className="navigationbar">
                     <DropdownMenu items={items1} text="Projects" />

@@ -7,6 +7,9 @@ import Residential from "./Components/Projects/Residential/Residential";
 import Commercial from "./Components/Projects/Commercial/Commercial";
 import Institutional from "./Components/Projects/Institutional/Institutional";
 import Industrial from "./Components/Projects/Industrial/Industrial";
+import PlantAndMachinery from "./Components/Expertise/PlantAndMachinery";
+import FormWork from "./Components/Expertise/FormWork";
+import Technology from "./Components/Expertise/Technology";
 const App = () => {
   return(
   <>
@@ -19,15 +22,15 @@ const App = () => {
         <Route exact path='/Commercial' element={<Commercial/>} />  
         <Route exact path='/Industrial' element={<Industrial/>} />  
         <Route exact path='/Institutional' element={<Institutional/>} />  
-        {/* <Route exact path='/PlantAndMachinery' element={<PlantAndMachinery/>} />  
-        <Route exact path='/Formwork' element={<Formwork/>} />  
+         <Route exact path='/PlantAndMachinery' element={<PlantAndMachinery/>} />  
+        <Route exact path='/FormWork' element={<FormWork/>} />  
         <Route exact path='/Technology' element={<Technology/>} />  
-        <Route exact path='/WhoWeAre' element={<WhoWeAre/>} />  
+        {/* <Route exact path='/WhoWeAre' element={<WhoWeAre/>} />  
         <Route exact path='/OurManagement' element={<OurManagement/>} />  
         <Route exact path='/OurStandards' element={<OurStandards/>} />  
         <Route exact path='/Awards' element={<Awards/>} />  
         <Route exact path='/CSR' element={<CSR/>} />  
-        <Route exact path='/Careers' element={<Careers/>} />   */}
+        <Route exact path='/Careers' element={<Careers/>} />    */}
       </Routes>
       <Footer />
       </div>
