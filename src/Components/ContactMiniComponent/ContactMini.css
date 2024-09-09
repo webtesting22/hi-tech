@@ -1,0 +1,11 @@
+.ContactUsContainer {
+    height: 40vh;
+    overflow: hidden;
+}
+
+.ContactUsContainer img {
+    opacity: 0.4;
+}
+.ContactUsContainer .ContentContiner{
+    position: absolute;
+}

@@ -53,7 +53,7 @@ const items2 = [
         key: '2',
         label: (
             <Link to="/FormWork" rel="noopener noreferrer">
-            Form work
+                Form work
             </Link>
         ),
     },
@@ -154,14 +154,16 @@ const DropdownMenu = ({ items, text }) => (
 const Navbar = () => {
     return (
         <>
-           <Link to="/"> <img src={HitechLogo} alt="HitechLogo" style={{ margin: "20px" }} /></Link>
-            <section className="navBar" id="navbar">
-                <nav className="navigationbar">
-                    <DropdownMenu items={items1} text="Projects" />
-                    <DropdownMenu items={items2} text="Expertise" />
-                    <DropdownMenu items={items3} text="About Us" />
-                    <DropdownMenu items={items4} text="Clients" />
-                </nav>
+            <section id="NavigationContainer">
+                <Link to="/"> <img src={HitechLogo} alt="HitechLogo" style={{ margin: "20px" }} /></Link>
+                <div className="navBar" id="navbar">
+                    <nav className="navigationbar">
+                        <DropdownMenu items={items1} text="Projects" />
+                        <DropdownMenu items={items2} text="Expertise" />
+                        <DropdownMenu items={items3} text="About Us" />
+                        <DropdownMenu items={items4} text="Clients" />
+                    </nav>
+                </div>
             </section>
         </>
     );

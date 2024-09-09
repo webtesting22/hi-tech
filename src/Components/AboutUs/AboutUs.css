@@ -2,16 +2,17 @@
 
 .aboutHeading {
   font-size: 70px;
-  padding:50px 80px;
+  /* padding:50px 80px; */
   letter-spacing: 2px;
-  line-height: 91px;
+  position: relative;
+  /* display: flex;
+  justify-content: center;
+  flex-direction: column; */
+  width: 80%;
+  /* display: f; */
+  /* line-height: 91px; */
 }
-.about-section {
-  max-width: 1335px;
-  margin: auto;
-  /* margin: 0 100px; */
-  /* padding: 50px    ; */
-}
+
 .contactButton {
   width: 388px;
   height: 97px;
@@ -23,6 +24,7 @@
   border-radius: 22px;
   border: 2px solid #ffffff;
 }
+
 .card1 {
 
   width: 728px;
@@ -34,6 +36,7 @@
   /* background-repeat: no-repeat; */
   /* height: 441px; */
 }
+
 .cardParagraph1 {
   font-size: 17px;
   max-width: 350px;
@@ -44,6 +47,7 @@
   margin-left: 160px;
   font-family: "Raleway", sans-serif;
 }
+
 .cardParagraph2 {
   max-width: 550px;
   margin-left: 10px;
@@ -51,6 +55,7 @@
   font-size: 17px;
   font-family: "Raleway", sans-serif;
 }
+
 .backgroundcontainer {
   height: 441px;
   width: 610px;
@@ -59,4 +64,78 @@
   background-size: 100% 100%;
   /* background-size: contain; */
   /* margin-right: 100px; */
+}
+
+.SwiperSliderContainer {
+  width: 200px;
+  border-radius: 20px;
+
+}
+
+.SwiperSliderContainer .swiper {
+  width: 200px;
+  border-radius: 50px;
+  /* position: absolute;
+  right: 300px;
+  left: 36%;
+  top: 0%; */
+}
+
+.SwiperSliderContainer .swiper .swiper-wrapper {
+  width: 200px;
+  border-radius: 20px;
+}
+
+.SwiperSliderContainer .swiper .swiper-wrapper img {
+  width: 200px;
+
+}
+
+#MainHomePagestyle {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AnimatedHeaderingText {
+  display: flex;
+  justify-content: center;
+  /* padding-top: 5rem; */
+}
+
+.AdjustContainer {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width:769px) {
+
+  .AdjustContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    flex-wrap: wrap;
+  }
+
+  .AdjustContainer span:nth-child(1){
+    padding-right: 10px;
+  }
+  .aboutHeading {
+    font-size: 30px;
+    letter-spacing: 2px;
+    position: relative;
+    width: 100%;
+    padding: 0px 20px;
+  }
+  .SwiperSliderContainer {
+    width: 200px;
+    border-radius: 20px;
+  padding: 20px 0px;
+  }
 }

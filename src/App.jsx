@@ -10,11 +10,12 @@ import Industrial from "./Components/Projects/Industrial/Industrial";
 import PlantAndMachinery from "./Components/Expertise/PlantAndMachinery";
 import FormWork from "./Components/Expertise/FormWork";
 import Technology from "./Components/Expertise/Technology";
+import "./App.css"
 const App = () => {
   return(
   <>
     <BrowserRouter>
-    <div>
+    {/* <div> */}
     <Navbar/>
       <Routes>
         <Route exact path='/' element={<HeroSection />}></Route>
@@ -33,7 +34,7 @@ const App = () => {
         <Route exact path='/Careers' element={<Careers/>} />    */}
       </Routes>
       <Footer />
-      </div>
+      {/* </div> */}
     </BrowserRouter>
   </>
   )

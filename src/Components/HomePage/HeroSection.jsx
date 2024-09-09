@@ -17,6 +17,8 @@ import partnerBackground from "/images/partnerBackground.png"
 import "./HeroSection.css";
 import ImageMap from "/images/mapImage.png";
 import CardComponent from "../CardComponent/CardComponent";
+import ProjectsCards from "../ProjectsCards/ProjectsCards";
+import ContactMini from "../ContactMiniComponent/ContactMini";
 
 const HeroSection = () => {
     const [hoverIndex, setHoverIndex] = useState(null);
@@ -112,9 +114,9 @@ const HeroSection = () => {
     ]
     return (
         <>
-            <AboutUs />
+            <AboutUs /> {/* Home Page hero Section */}
             <div className="achievements">
-                <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+                <div className="InsideContainers">
                     {achievementData.map((item, index) => (
                         <div key={index} className="achievementCard">
                             <img src={item.achievementIcon} style={{ height: "70px", width: "70px", marginRight: "10px" }} />
@@ -126,15 +128,18 @@ const HeroSection = () => {
                     ))}
                 </div>
             </div>
-            <div className="projects">
-                <h1>Our <div className="blueHeading">Projects</div>
+            <div className="projects containerPadding">
+                <h1 className="blueHeading">Our <span >Projects</span>
                 </h1>
                 <Row>
                     {projectsData.map((item, index) => (
-                        <Col lg={12}>
+                        <Col lg={12}
+                            md={24}
+                            sm={24}
+                            xs={24}>
                             <div className="projectComponent" key={index}>
                                 <div className="headingContainer">
-                                    <h1 style={{ fontSize: "25px", paddingLeft: "20px", paddingTop: "10px" }}>{item.projectHeading}</h1>
+                                    <h1>{item.projectHeading}</h1>
                                 </div>
                                 <div className="bg2"></div>
                                 <div className="bg1"></div>
@@ -146,51 +151,8 @@ const HeroSection = () => {
                     ))}
                 </Row>
             </div>
-            <div>
-                <div className="section-padding">
-                    {imageMap.map((item, index) => (
-                        <img src={item.images} key={index} className="mapImage" />
-                    ))}
-                </div>
-                <h1 style={{ textAlign: "center" }}>Our <div className="blueHeading">Value</div> Creation Parameters  </h1>
-                <div style={{ display: "flex", flexDirection: "row", margin: "50px" }}>
-                    {valuesData.map((item, index) => (
-                        <Col key={index} md={6}>
-                            <div className="valueBox"
-                                onMouseEnter={() => setHoverIndex(index)}
-                                onMouseLeave={() => setHoverIndex(null)}>
-                                <img src={item.valueIcon} />
-                                <h1 className="valueTitle">{item.valueHeading}</h1>
-                                {/* <p className="valueDescription">{item.valueDescription}</p>
-                                        <a className="valueFooter">
-                                            {item.valueLink}
-                                            <img src={Arrow} className="arrow1" alt="Arrow" />
-                                        </a> */}
-                                {hoverIndex === index && (
-                                    <>
-                                        <p className="valueDescription">{item.valueDescription}</p>
-                                        <a className="valueFooter">
-                                            {item.valueLink}
-                                            <img src={Arrow} className="arrow1" alt="Arrow" />
-                                        </a>
-                                    </>
-                                )}
-                                {/* {showDescription && <p className="valueDescription">{item.valueDescription}</p>}
-                        {showDescription && <a className="valueFooter">{item.valueLink}<img src={Arrow} className="arrow1" /></a>} */}
-                            </div>
-                        </Col>
-
-                    ))}
-                </div>
-            </div>
-            <div className="partner" style={{ background: `url(${partnerBackground})` }}>
-                <h1 style={{ fontSize: "50px" }}>Interested in Partnering with Us?</h1>
-                <button className="contactUsButton">CONTACT US
-                    <img src={Arrow} style={{height:"40px",width:"40px"}} alt="Arrow" />
-                </button>
-            </div>
-                    {/* <CardComponent/> */}
-                    {/* <button className="projectButton">ONGOING PROJECTS</button> */}
+            <ProjectsCards />
+            <ContactMini />
         </>
     )
 }

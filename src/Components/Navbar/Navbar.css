@@ -1,8 +1,8 @@
 .navigationbar{
     background-color: rgba(90, 106, 119, 0.73);
-    height: 40px;
+    /* height: 40px; */
     border-radius: 50px;
-    width: 570px;
+    /* width: 570px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,12 +12,26 @@
 }
 .navigationbar a {
     /* padding: 30px; */
-    margin: 20px;
-    font-size: 18px;
+    margin: 10px 20px;
 }
 #navbar{
-    
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+#NavigationContainer{
+    display: flex;
+    justify-content: space-between;
+}
+#NavigationContainer .anticon-down{
+    font-size: 10px !important;
+}
+
+@media (max-width:769px){
+    #navbar{
+        /* display: flex; */
+        flex-direction: row;
+        align-items: center;
+        display: none;
+    }
 }
