@@ -36,24 +36,29 @@ const ProjectsCards = () => {
         },
         {
             img: img5,
+            // title: "Executive lounge",
+            BackContent: "Hitech Projects celebrated 25 successful years of its entrepreneurial journey of growth in the construction industry by moving into a spacious new office."
+        },
+        {
+            img: img6,
             title: "Executive lounge",
             BackContent: "Relationships are the only thing that matter business in life."
         },
         {
-            img: img6,
+            img: img7,
             title: "workspace",
             BackContent: "In your workspace, surround yourself with objects that bring you joy and ignite your creativity."
         },
         {
-            img: img7,
-            title: "reception",
+            img: img8,
+            title: "Reception",
             BackContent: "We express gratitude to all our business partners and stakeholders who have supported us throughout this exciting journey."
         },
         {
-            img: img8,
-            title: "Training room",
-            BackContent: "Success in business requires: Training, Discipline, Hard Work"
-        },
+            img:img9,
+            title:"Training room",
+            BackContent:"Success in business requires: Training, Discipline, Hard Work",
+        }
     ]
     return (
         <>
@@ -68,7 +73,7 @@ const ProjectsCards = () => {
                                     md={12}
                                     sm={24}
                                     xs={24}
-                                    style={{ display: "flex", justifyContent: "center" }}
+                                    style={{ display: "flex", justifyContent: "center",margin:"20px" }}
                                 >
                                     <div className="card_gallery_warpper">
                                         <div className="card_gallery">

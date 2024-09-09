@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Navigation } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -127,26 +127,40 @@ const content = {
 
 }
 const Institutional = () => {
+  const [selectedTab, setSelectedTab] = useState("ongoing"); // Initial tab state
+
   return (
     <>
-      <ProjectPage title={content.title} description={content.description} />
-      <button className="projectButton">ONGOING PROJECTS</button>
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper"  slidesPerView={3}>
-        
 
-          {institutionalprojectslist.map((item, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <CardComponent image={item.src} title={item.title} client={item.client} location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
-                  projectYear={item.projectYear} architect={item.architect} consultant={item.consultant} scope={item.scope}
-                />
-              </SwiperSlide>)
-          })}
-        
-      </Swiper>
-      <button className="projectButton">COMPLETED PROJECTS</button>
+      <ProjectPage title={content.title} description={content.description} />
+      <button
+        className={`projectButton ${selectedTab === "ongoing" ? "active" : ""}`}
+        onClick={() => setSelectedTab("ongoing")}
+      >
+        ONGOING PROJECTS
+      </button>
+      <button
+        className={`projectButton ${selectedTab === "completed" ? "active" : ""}`}
+        onClick={() => setSelectedTab("completed")}
+      >
+        COMPLETED PROJECTS
+      </button>
+      {selectedTab === "ongoing" && (
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={3}>
-        
+        {institutionalprojectslist.map((item, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <CardComponent image={item.src} title={item.title} client={item.client} location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
+                projectYear={item.projectYear} architect={item.architect} consultant={item.consultant} scope={item.scope}
+              />
+            </SwiperSlide>)
+        })}
+
+      </Swiper>
+      )}
+      {selectedTab === "completed" && (
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={3}>
+
           {institutionalprojectscompleted.map((item, index) => {
             return (
               <SwiperSlide key={index}>
@@ -156,8 +170,8 @@ const Institutional = () => {
               </SwiperSlide>)
 
           })}
-        
-      </Swiper>
+
+        </Swiper>)}
     </>
   )
 }

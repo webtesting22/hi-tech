@@ -9,12 +9,12 @@ const Footer = () => {
         <>
             <div className="footer-section">
                 <Row>
-                    <Col md={6} className="footer-column">
+                    <Col md={6} xs={24} className="footer-column">
                         <img src={HitechLogo} />
                         <p style={{ paddingLeft: "17px", paddingTop: "39px" }}>Hitech is dedicated to excellence in construction, delivering quality in every project from residential homes to commercial spaces.</p>
                     </Col>
                     <hr className="verticalDivider"></hr>
-                    <Col md={6} className="footer-column">
+                    <Col md={6} xs={24} className="footer-column">
                         <h1>All Pages</h1>
                         <div style={{ display: "flex", flexDirection: "row" }}>
                             <div className="links-container">
@@ -33,7 +33,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={6} className="footer-column">
+                    <Col md={6} xs={24} className="footer-column">
                         <h1>Contacts</h1>
                         <a href="tel:+91-9904592200"><p style={{ display: "inline-block" }}>+91-9904592200</p></a><a href="tel:+91-9904288900"><p style={{ display: "inline-block" }}> / +91-9904288900</p></a>
                         <a href="mailto:info@hitechprojects.co.in"><p>info@hitechprojects.co.in</p></a>
@@ -46,7 +46,7 @@ const Footer = () => {
                             </a>
                         </p>
                     </Col>
-                    <Col md={5} className="footer-column">
+                    <Col md={5} xs={24} className="footer-column">
                         <h1>Certifications</h1>
                         <p>ISO 9001</p>
                         <p>ISO 45001</p>

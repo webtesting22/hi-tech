@@ -139,8 +139,7 @@ const items4 = [
 
 const DropdownMenu = ({ items, text }) => (
     <Dropdown
-        menu={{ items }} placement="bottom"
-
+        menu={{ items }} placement="bottom" 
     >
         <a onClick={(e) => e.preventDefault()}>
             <Space>

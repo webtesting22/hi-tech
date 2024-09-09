@@ -35,7 +35,7 @@
   flex-direction: column;
   position: relative;
   align-items: center;
-  margin: 5px auto;
+  margin: 15px auto;
 }
 
 .headingContainer {
@@ -91,6 +91,7 @@
   right: 0px;
   width: 20%;
   transition: .5s;
+  z-index: 1000;
 }
 
 .projectComponent:hover .arrow {

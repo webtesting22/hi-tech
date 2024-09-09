@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Navigation } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -241,12 +241,12 @@ const residentialList = [
   //     "Civil works for RCC Core and Shell , waterproofing, masonry, all in-building MEP, interior finishing works",
   // },
 
-  
 
-  
+
+
 ];
 const residentialCompletedList = [
- 
+
   {
     src: "/images/Projects/residential/completed/12.jpeg",
     title: "SECURITY STAFF HOUSING",
@@ -454,11 +454,26 @@ const content = {
 
 }
 const Residential = () => {
+  const [selectedTab, setSelectedTab] = useState("ongoing"); // Initial tab state
+
   return (
     <>
+
       <ProjectPage title={content.title} description={content.description} />
-      <button className="projectButton">ONGOING PROJECTS</button>
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={3}>
+      <button
+        className={`projectButton ${selectedTab === "ongoing" ? "active" : ""}`}
+        onClick={() => setSelectedTab("ongoing")}
+      >
+        ONGOING PROJECTS
+      </button>
+      <button
+        className={`projectButton ${selectedTab === "completed" ? "active" : ""}`}
+        onClick={() => setSelectedTab("completed")}
+      >
+        COMPLETED PROJECTS
+      </button>
+      {selectedTab === "ongoing" && (
+      <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={3}  >
         {residentialList.map((item, index) => {
           return (
             <SwiperSlide key={index}>
@@ -469,20 +484,21 @@ const Residential = () => {
         })}
 
       </Swiper>
-      <button className="projectButton">COMPLETED PROJECTS</button>
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={3}>
+      )}
+      {selectedTab === "completed" && (
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={3}>
 
-        {residentialCompletedList.map((item, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <CardComponent key={index} image={item.src} title={item.title} client={item.client} location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
-                projectYear={item.projectYear} architect={item.architect} consultant={item.consultant} scope={item.scope}
-              />
-            </SwiperSlide>)
+          {residentialCompletedList.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <CardComponent key={index} image={item.src} title={item.title} client={item.client} location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
+                  projectYear={item.projectYear} architect={item.architect} consultant={item.consultant} scope={item.scope}
+                />
+              </SwiperSlide>)
 
-        })}
+          })}
 
-      </Swiper>
+        </Swiper>)}
     </>
   )
 }

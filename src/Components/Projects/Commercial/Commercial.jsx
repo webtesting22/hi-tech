@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import ProjectPage from "../CommonProject/ProjectPage";
 import CardComponent from "../../CardComponent/CardComponent";
 import { Navigation } from 'swiper/modules';
@@ -354,41 +354,51 @@ const content = {
 
 }
 const Commercial = () => {
+  const [selectedTab, setSelectedTab] = useState("ongoing"); // Initial tab state
+
   return (
     <>
 
       <ProjectPage title={content.title} description={content.description} />
-
-      <button className="projectButton">ONGOING PROJECTS</button>
+      <button
+        className={`projectButton ${selectedTab === "ongoing" ? "active" : ""}`}
+        onClick={() => setSelectedTab("ongoing")}
+      >
+        ONGOING PROJECTS
+      </button>
+      <button
+        className={`projectButton ${selectedTab === "completed" ? "active" : ""}`}
+        onClick={() => setSelectedTab("completed")}
+      >
+        COMPLETED PROJECTS
+      </button>
+      {selectedTab === "ongoing" && (
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={3}>
-        
-
-          {commerciallist.map((item, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <CardComponent image={item.src} title={item.title} client={item.client} location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
-                  projectYear={item.projectYear} architect={item.architect} consultant={item.consultant} scope={item.scope}
-                />
-              </SwiperSlide>)
-          })}
-        
-      </Swiper>
-      <button className="projectButton">COMPLETED PROJECTS</button>
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={3}>
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        {commercialcompleted.map((item, index) => {
+        {commerciallist.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <CardComponent key={index} image={item.src} title={item.title} client={item.client} location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
+              <CardComponent image={item.src} title={item.title} client={item.client} location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
                 projectYear={item.projectYear} architect={item.architect} consultant={item.consultant} scope={item.scope}
               />
             </SwiperSlide>)
-
         })}
-      </div>
+
       </Swiper>
+      )}
+      {selectedTab === "completed" && (
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={3}>
 
+          {commercialcompleted.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <CardComponent key={index} image={item.src} title={item.title} client={item.client} location={item.location} projectSize={item.projectSize} projectDes={item.projectDes}
+                  projectYear={item.projectYear} architect={item.architect} consultant={item.consultant} scope={item.scope}
+                />
+              </SwiperSlide>)
 
+          })}
+
+        </Swiper>)}
     </>
   )
 }

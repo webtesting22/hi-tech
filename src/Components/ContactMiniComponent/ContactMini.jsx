@@ -7,18 +7,9 @@ const ContactMini = () => {
         <>
             <section className="containerPadding">
                 <div className="ContactUsContainer">
-                    <img src={BackImage} alt="" />
-                    <div className="ContentContiner">
-                        <Row>
-                            <Col>
-                                <div className="taglineContainer">
-                                    <h2>Interested in Partnering with Us?</h2>
-                                </div>
-                            </Col>
-                            <Col>
-                                <div className="ContactUsBtn">Contact Us</div>
-                            </Col>
-                        </Row>
+                    <div className="ContentContainer">
+                        <h2>Interested in Partnering with Us?</h2>
+                        <div className="ContactUsBtn">Contact Us</div>
                     </div>
                 </div>
             </section>

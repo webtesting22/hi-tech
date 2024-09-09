@@ -4,10 +4,12 @@ import People from "/images/group.png"
 import Medal from "/images/achievementMedal.png";
 import workForce from "/images/workForce.png";
 import { Row, Col } from "antd";
-import Residential from "/images/Residential.png";
-import Commercial from "/images/Commercial.png";
-import Industrial from "/images/Industrial.png";
-import Institutional from "/images/Institutional.png";
+import { Link } from "react-router-dom";
+import Residentialimg from "/images/Residential.png";
+import Residential from "../Projects/Residential/Residential";
+import Commercialimg from "/images/Commercial.png";
+import Industrialimg from "/images/Industrial.png";
+import Institutionalimg from "/images/Institutional.png";
 import Arrow from "/images/arrow.png";
 import PeopleGroup from "/images/People.png";
 import Process from "/images/Refresh.png"
@@ -42,19 +44,23 @@ const HeroSection = () => {
     const projectsData = [
         {
             projectHeading: "Residential",
-            projectImage: Residential,
+            projectImage: Residentialimg,
+            projectLink:"/Residential",
         },
         {
             projectHeading: "Commercial",
-            projectImage: Commercial,
+            projectImage: Commercialimg,
+            projectLink:"/Commercial",
         },
         {
             projectHeading: "Industrial",
-            projectImage: Industrial,
+            projectImage: Industrialimg,
+            projectLink:"/Industrial",
         },
         {
             projectHeading: "Institutional & Corporate",
-            projectImage: Institutional,
+            projectImage: Institutionalimg,
+            projectLink:"/Institutional",
         }
     ]
     const valuesData = [
@@ -137,6 +143,7 @@ const HeroSection = () => {
                             md={24}
                             sm={24}
                             xs={24}>
+                            <Link to={item.projectLink}>
                             <div className="projectComponent" key={index}>
                                 <div className="headingContainer">
                                     <h1>{item.projectHeading}</h1>
@@ -146,7 +153,7 @@ const HeroSection = () => {
                                 <img src={item.projectImage} className="projectImage" alt={item.projectHeading} />
                                 <img src={Arrow} className="arrow" />
                             </div>
-
+                        </Link>
                         </Col>
                     ))}
                 </Row>

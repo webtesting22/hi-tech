@@ -1,11 +1,74 @@
-.ContactUsContainer {
+/* .ContactUsContainer {
     height: 40vh;
     overflow: hidden;
+    background: url("./BackImage.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ContentContainer{
+   display: flex;
+   z-index: 200;
+   opacity: 1 !important;
+}
+ */
+
+ .ContactUsContainer {
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.ContactUsContainer img {
-    opacity: 0.4;
-}
-.ContactUsContainer .ContentContiner{
+.ContactUsContainer::before {
+    content: '';
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./BackImage.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4; /* Set lower opacity for the image */
+    z-index: 1;
+}
+
+.ContentContainer {
+    position: relative;
+    z-index: 2; /* Ensure content is above the background image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #fff; /* Optional: Set text color for better visibility */
+}
+
+.ContactUsBtn {
+    /* background-color: #0056b3; */
+    background: transparent;
+    border: 2px solid white;
+    color:white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.ContactUsBtn:hover{
+    background-color: #004985;
+    color:#fff ;
+    transition: all 0.3s ease-in;
+}
+@media (max-width:576px){
+    .ContentContainer{
+        font-size: 1.4rem;
+    }
 }

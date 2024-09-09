@@ -20,11 +20,13 @@
   padding: 20px;
 }
 .ProjectDescription {
-  max-width: 850px;
+  /* max-width: 850px; */
+  padding: 10px 200px;
   text-align: center;
+  line-height: 25px;
   font-size: 20px;
 }
-.projectButton {
+/* .projectButton {
   background: linear-gradient(
     90deg,
     rgba(5, 71, 243, 1) 0%,
@@ -40,9 +42,9 @@
   padding: 10px;
   font-size: 18px;
   position: relative;
-  /* bottom: 48px; */
   margin-left: 70px;
-  transition: background 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  background-position: right bottom;
 }
 .projectButton:hover {
   background: linear-gradient(
@@ -50,4 +52,30 @@
     rgba(4, 74, 255, 1) 0%,
     rgba(26, 30, 35, 1) 100%
   );
+  background-position: left bottom;
+ 
+} */
+.projectButton {
+  background: linear-gradient(
+    90deg,
+    rgba(5, 71, 243, 1) 0%,
+    rgba(26, 30, 35, 1) 100%
+  );
+  color: white;
+  width: 249px;
+  height: 51px;
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #132b66, #ffffff);
+  border-image-slice: 1;
+  padding: 10px;
+  font-size: 18px;
+  position: relative;
+  margin-left: 70px;
+  transition: background-size 0.5s ease-in-out, background-position 0.5s ease-in-out;
+  background-size: 200% 100%; /* Initial size of the background */
+  background-position: right bottom; /* Start from the left */
+}
+
+.projectButton:hover {
+  background-position: left bottom; /* Move the gradient to the right */
 }
